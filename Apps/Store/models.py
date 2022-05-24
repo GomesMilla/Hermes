@@ -1,6 +1,6 @@
 from itertools import product
 from pyexpat import model
-from unicodedata import category
+from unicodedata import category, decimal
 from django.db import models
 from Users.models import BaseModels
 from smart_selects.db_fields import ChainedForeignKey
@@ -40,7 +40,7 @@ class Product(BaseModels):
         auto_choose=True,
         sort=True
         )  
-    price = models.FloatField("Price of the product")
+    price = models.FloatField("Price of the product", max_digits=5, decimal_places=2)
     warranty = models.CharField("Warranty of the product", max_length=14)
     profile_picture = models.ImageField("Foto de Perfil",  null=True, blank=True, upload_to="FotodePerfilPorduct/")
 
