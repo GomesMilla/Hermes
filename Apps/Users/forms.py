@@ -1,7 +1,6 @@
 from dataclasses import field
 from django import forms
-from .models import *
-from Users.models import Profile
+from .models import Profile
 
 class UserForm(forms.ModelForm):
 
