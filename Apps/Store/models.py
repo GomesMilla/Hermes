@@ -40,7 +40,7 @@ class Product(BaseModels):
         auto_choose=True,
         sort=True
         )  
-    price = models.FloatField("Price of the product", max_digits=5, decimal_places=2)
+    price = models.FloatField("Price of the product")
     warranty = models.CharField("Warranty of the product", max_length=14)
     profile_picture = models.ImageField("Foto de Perfil",  null=True, blank=True, upload_to="FotodePerfilPorduct/")
 
