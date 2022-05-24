@@ -1,0 +1,41 @@
+{% extends "Bases/Base.html"%}
+{% load static %}
+{% block content %}
+ 
+<div class="container top">    
+    <div class="row d-flex justify-content-start">
+        <h1 class="text-white">Aqui você encontra...</h1>
+        {% if list_queryset%}
+            <div class="row row-cols-2 row-cols-md-4 g-2 mt-5 ">
+                {% for category in list_queryset %}
+                    <div class="col">
+                        <div class="card cards-collor text-white">
+                            <img src={{category.profile_picture.url}} class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">{{category.name}}</h5>
+                            <p class="card-text letters mt-3">Á vista</p>
+                            <p class="fs-2 letters">R$ {{category.price}} </p>
+                            <p class="fst-italic">No PIX com 12% de desconto</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}           
+            </div>
+        {% else %} 
+        <div class="mt-5">
+
+        </div>
+            <img src="{% static 'media/logos/Error.svg'%}" class="rounded mx-auto d-block" width="2000" height="400" alt="...">
+            <div class="alert alert-danger d-flex align-items-center mt-3 me-5" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                <div class="text-center">
+                    Ops! Parece que nós estamos nenhum produto cadastrado em nossa loja! Não se preucupe, nós vamos resolver isso!!
+                </div>
+            </div>
+        {% endif %}            
+    </div>    
+</div>
+
+
+
+{%endblock content%}
