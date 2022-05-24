@@ -105,12 +105,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_URL = '/StaticFile/'
+STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'Static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "StaticFile")
+    os.path.join(BASE_DIR, "static")
 ]
 
 MEDIA_URL = '/media/'
