@@ -3,7 +3,6 @@ from django import forms
 from .models import Profile
 
 class UserForm(forms.ModelForm):
-
     # def save(self, commit=True):
     #     user = super(UserForm, self).save(commit=False)
     #     user.set_password(self.cleaned_data['password'])
